@@ -9,7 +9,7 @@ description = "Monte Carlo option pricing with variance reduction and honest err
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "YOUR NAME", email = "you@example.com" }]
+authors = [{ name = "Mohammad Ibrahim", email = "mohammad.ibrahim9956@gmail.com" }]
 keywords = ["monte-carlo", "option-pricing", "quantitative-finance", "black-scholes", "variance-reduction"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -25,9 +25,8 @@ app = ["streamlit>=1.30,<2", "matplotlib>=3.7,<4"]
 dev = ["pytest>=7.4,<10", "ruff>=0.4"]
 
 [project.urls]
-Homepage = "https://github.com/YOUR-USERNAME/monte-carlo-option-pricing"
-Issues = "https://github.com/YOUR-USERNAME/monte-carlo-option-pricing/issues"
-
+Homepage = "https://github.com/mocodezz/monte-carlo-option-pricing"
+Issues = "https://github.com/mocodezz/monte-carlo-option-pricing/issues"
 [tool.setuptools]
 packages = ["mcopt"]
 
