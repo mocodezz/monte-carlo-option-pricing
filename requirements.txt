@@ -6,3 +6,8 @@ numpy>=1.24,<3
 scipy>=1.10,<2
 matplotlib>=3.7,<4
 streamlit>=1.30,<2
+
+# starlette 1.4.0 added a required keyword-only argument to GZipResponder.__init__
+# that streamlit 1.61's gzip middleware does not pass, breaking every request.
+# Remove this pin once streamlit ships a compatible release.
+starlette<1.4
