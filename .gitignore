@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Archives of this repo should not live inside this repo
+*.zip
+
+# NOTE: docs/figures/ is deliberately committed -- the README embeds it.
