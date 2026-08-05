@@ -77,12 +77,12 @@ For each draw $Z$, also use $-Z$, and average within the pair:
 
 $$Y_i = \tfrac{1}{2}\left[g(Z_i) + g(-Z_i)\right]$$
 
-Writing $\rho = \operatorname{Corr}\!\left(g(Z), g(-Z)\right)$,
+Writing $\rho = \mathrm{Corr}\!\left(g(Z), g(-Z)\right)$,
 
-$$\operatorname{Var}(Y) = \tfrac{1}{2}\operatorname{Var}(g)\,(1 + \rho)$$
+$$\mathrm{Var}\!\left(Y\right) = \tfrac{1}{2}\mathrm{Var}\!\left(g\right)\,(1 + \rho)$$
 
 With $N = 2m$ total draws arranged in $m$ pairs, the estimator variance is
-$\operatorname{Var}(g)(1+\rho)/N$ against $\operatorname{Var}(g)/N$ for plain
+$\mathrm{Var}\!\left(g\right)(1+\rho)/N$ against $\mathrm{Var}\!\left(g\right)/N$ for plain
 Monte Carlo. The technique helps precisely when $\rho < 0$, which is guaranteed
 whenever $g$ is monotone in $Z$ — true for vanilla calls and puts.
 
@@ -90,7 +90,7 @@ whenever $g$ is monotone in $Z$ — true for vanilla calls and puts.
 
 The standard error **must** be computed across the $m$ pair averages, not the
 $N$ raw samples. Taking $s/\sqrt{N}$ over all draws estimates
-$\operatorname{Var}(g)/N$, silently discarding the $(1+\rho)$ factor that is the
+$\mathrm{Var}\!\left(g\right)/N$, silently discarding the $(1+\rho)$ factor that is the
 entire point of the method — and so misstates the error.
 
 `_summarise()` in `mcopt/engine.py` collapses pairs before computing the error,
@@ -108,11 +108,11 @@ $$Y = X - c\left(W - \mu_W\right)$$
 satisfies $\mathbb{E}[Y] = \mathbb{E}[X]$, so the estimator stays unbiased.
 Its variance,
 
-$$\operatorname{Var}(Y) = \operatorname{Var}(X) - 2c\operatorname{Cov}(X,W) + c^2\operatorname{Var}(W)$$
+$$\mathrm{Var}\!\left(Y\right) = \mathrm{Var}\!\left(X\right) - 2c\mathrm{Cov}\!\left(X,W\right) + c^2\mathrm{Var}\!\left(W\right)$$
 
 is minimised at
 
-$$c^{*} = \frac{\operatorname{Cov}(X,W)}{\operatorname{Var}(W)}, \qquad \operatorname{Var}(Y^{*}) = \operatorname{Var}(X)\left(1 - \rho_{XW}^{2}\right)$$
+$$c^{*} = \frac{\mathrm{Cov}\!\left(X,W\right)}{\mathrm{Var}\!\left(W\right)}, \qquad \mathrm{Var}\!\left(Y^{*}\right) = \mathrm{Var}\!\left(X\right)\left(1 - \rho_{XW}^{2}\right)$$
 
 The reduction depends entirely on the correlation. At $\rho = 0.9$ the variance
 falls by 81%; at $\rho = 0.999$ it falls by 99.8%.
@@ -146,7 +146,7 @@ $G = \left(\prod_i S_{t_i}\right)^{1/n}$:
 
 $$\ln G = \ln S_0 + \left(r - q - \tfrac{1}{2}\sigma^2\right)\bar{t} + \frac{\sigma}{n}\sum_{i=1}^{n} W_{t_i}, \qquad \bar{t} = \frac{1}{n}\sum_i t_i$$
 
-Since $\operatorname{Cov}(W_{t_i}, W_{t_j}) = \min(t_i, t_j)$, we have
+Since $\mathrm{Cov}\!\left(W_{t_i}, W_{t_j}\right) = \min(t_i, t_j)$, we have
 $\ln G \sim \mathcal{N}(\mu, s^2)$ with
 
 $$\mu = \ln S_0 + \left(r - q - \tfrac{1}{2}\sigma^2\right)\bar{t}, \qquad s^2 = \frac{\sigma^2}{n^2}\sum_{i=1}^{n}\sum_{j=1}^{n}\min(t_i, t_j)$$
@@ -176,16 +176,16 @@ A central-difference delta is
 $$\hat{\Delta} = \frac{\hat{V}(S_0 + h) - \hat{V}(S_0 - h)}{2h}$$
 
 With **independent** samples for the two valuations, the numerator has variance
-$2\operatorname{Var}(\hat{V})$, so
+$2\mathrm{Var}\!\left(\hat{V}\right)$, so
 
-$$\operatorname{Var}(\hat{\Delta}) = \frac{\operatorname{Var}(\hat{V})}{2h^2}$$
+$$\mathrm{Var}\!\left(\hat{\Delta}\right) = \frac{\mathrm{Var}\!\left(\hat{V}\right)}{2h^2}$$
 
 which diverges as $h \to 0$. The bias-variance trade-off is brutal: a small $h$
 gives a good finite-difference approximation and an unusable estimate.
 
 Reusing the **same** normal draws for both valuations makes the numerator a
 difference of two highly correlated quantities. For payoffs that are Lipschitz
-in $S_0$ the difference is $O(h)$, so $\operatorname{Var}(\hat{\Delta})$ is
+in $S_0$ the difference is $O(h)$, so $\mathrm{Var}\!\left(\hat{\Delta}\right)$ is
 $O(1)$ rather than $O(h^{-2})$.
 
 In `mc_greeks_fd()` this is implemented by passing the identical seed into every
