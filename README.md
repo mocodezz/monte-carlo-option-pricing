@@ -2,7 +2,7 @@
 
 **A derivatives pricing engine that reports what most Monte Carlo implementations leave out: how much of the answer is noise.**
 
-[![tests](https://github.com/YOUR-USERNAME/monte-carlo-option-pricing/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR-USERNAME/monte-carlo-option-pricing/actions/workflows/tests.yml)
+[![tests](https://github.com/mocodezz/monte-carlo-option-pricing/actions/workflows/tests.yml/badge.svg)](https://github.com/mocodezz/monte-carlo-option-pricing/actions/workflows/tests.yml)
 [![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://www.python.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![ruff](https://img.shields.io/badge/lint-ruff-261230)](https://github.com/astral-sh/ruff)
@@ -102,7 +102,7 @@ scales as $O(h^{-2})$ — unusable at any practical path count.
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/monte-carlo-option-pricing.git
+git clone https://github.com/mocodezz/monte-carlo-option-pricing.git
 cd monte-carlo-option-pricing
 
 python3 -m venv .venv
