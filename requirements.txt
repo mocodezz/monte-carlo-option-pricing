@@ -1,0 +1,8 @@
+# Streamlit Community Cloud installs from this file, so it must exist and must
+# mirror the runtime dependencies in pyproject.toml. For local development
+# prefer:  pip install -e ".[app,dev]"
+
+numpy>=1.24,<3
+scipy>=1.10,<2
+matplotlib>=3.7,<4
+streamlit>=1.30,<2

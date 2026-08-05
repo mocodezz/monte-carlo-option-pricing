@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcopt"
+version = "1.0.0"
+description = "Monte Carlo option pricing with variance reduction and honest error bars"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "YOUR NAME", email = "you@example.com" }]
+keywords = ["monte-carlo", "option-pricing", "quantitative-finance", "black-scholes", "variance-reduction"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30,<2", "matplotlib>=3.7,<4"]
+dev = ["pytest>=7.4,<10", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/YOUR-USERNAME/monte-carlo-option-pricing"
+Issues = "https://github.com/YOUR-USERNAME/monte-carlo-option-pricing/issues"
+
+[tool.setuptools]
+packages = ["mcopt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = [".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
