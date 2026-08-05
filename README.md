@@ -12,7 +12,7 @@ interval. Variance reduction is measured rather than asserted. The
 $1/\sqrt{N}$ convergence rate is recovered from the code's own output rather
 than quoted from a textbook.
 
-**[Live demo](https://YOUR-APP.streamlit.app)** · **[Methodology](docs/METHODOLOGY.md)**
+**[Live demo](https://monte-carlo-option-pricing-n2ks9wysyzcs3csyfwuqqz.streamlit.app/)** · **[Methodology](docs/METHODOLOGY.md)**
 
 ---
 
