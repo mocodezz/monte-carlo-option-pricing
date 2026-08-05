@@ -1,0 +1,8 @@
+# Matches the accent colour used in docs/figures/ so the app and the README
+# read as one project rather than two.
+[theme]
+primaryColor = "#2f6fed"
+base = "light"
+
+[server]
+headless = true
